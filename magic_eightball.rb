@@ -2,7 +2,7 @@ require "colorize"
 require "pry"
 
 def separator
-  puts "~" * 150
+  puts "~".colorize(:blue) * 125
   puts
 end
 
@@ -23,7 +23,7 @@ puts "                                Welcome to the Mystical Magic 8-Ball!".col
 separator
 separator
 sleep(1)
-puts "                        Type a question to get a answer! Or type QUIT to end program".colorize(:blue)
+puts "                        Type a question to get a answer! Or type QUIT to end program".colorize(:green)
 separator
 user_questions
 end
@@ -45,7 +45,7 @@ def user_questions
      edit_answers
 
      when  user_input = "QUIT" 
-     puts "                     Thanks & Have a Magical Day!".colorize(:red)
+     puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Thanks & Have a Magical Day!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".colorize(:red)
      exit!
      else
      separator
@@ -58,7 +58,7 @@ end
 
 
 def random_answers
-  puts "~~~~~~~~~~~~~~~~~~~#{@random_answers.to_a.sample}".colorize(:yellow)
+  puts "       >>>>> #{@random_answers.to_a.sample} <<<<<".colorize(:yellow)
   separator
   menu
 end
